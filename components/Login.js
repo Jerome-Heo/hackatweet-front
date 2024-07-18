@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 
 function Login() {
 
-
+const router = useRouter()
 const URL = 'http://localhost:3000'
 const dispatch = useDispatch()
 
@@ -40,7 +40,7 @@ const handleSignUp = () => {
         if(data.result) {
           dispatch(login({username: signUpUsername, token: data.token}));
           resetFields();
-          window.location.href = `/home`; 
+          router.push("/home")
         } else {
           resetFields();
           setErreurUp(true) //sagouin faudra que ça degage
@@ -56,9 +56,10 @@ const handleSignIn = () => {
     }).then(response => response.json())
       .then(data => {
         if(data.result) {
+          console.log(data.token)
           dispatch(login({username: signInUsername, token: data.token}));
           resetFields();
-          window.location.href = `/home`;
+          router.push("/home")
         } else {
           setErreurIn(true) //sagouin faudra que ça dégage
         }
