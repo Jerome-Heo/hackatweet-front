@@ -5,9 +5,9 @@ function Tweet(props) {
 
     return(
         <div className={styles.Tweet}>
-            <h3>{props.author}</h3>
+           <div className={styles.TweetHead}> <h3 className={styles.author}>{props.author}</h3> <p>{props.date}</p> </div>
             <p>{props.content}</p>
-            <p>{props.data}</p>
+            
         </div>
 
     )

@@ -1,0 +1,13 @@
+.Tweet{
+    width: 60%;
+}
+
+.author{
+    margin-right: 10px;
+}
+
+.TweetHead{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
