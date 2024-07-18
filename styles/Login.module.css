@@ -20,3 +20,8 @@
 .title a:hover, .title a:focus, .title a:active {
   text-decoration: underline;
 }
+
+.cont{
+  margin-top: 20px;
+  border: dotted grey;
+}
