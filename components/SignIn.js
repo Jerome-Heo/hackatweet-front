@@ -1,16 +1,14 @@
-import styles from '../styles/Home.module.css';
+import styles from '../styles/SignIn.module.css';
 import Link from 'next/link';
-import Image from 'next/image';
 
-function Home() {
+function SignIn() {
   return (
     <div>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Home
+          Sign In
         </h1>
-        <img src="twitter_logo.png" alt="Hack a Tweet" width={120} height={120}/>
-        <Link href="/signin">Sign In</Link>
+        <Link href="/">Home</Link>
         <Link href="/signup">Sign Up</Link>
         <Link href="/login">Login</Link>
         
@@ -19,4 +17,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default SignIn;
