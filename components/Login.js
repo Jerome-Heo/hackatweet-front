@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 function Login() {
 
 const router = useRouter()
-const URL = 'http://localhost:3000'
+const URL = 'https://hackatweet-backend-ivory.vercel.app'
 const dispatch = useDispatch()
 
 const [signInUsername, setSignInUsername] = useState('')
