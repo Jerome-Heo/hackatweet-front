@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import user from '../reducers/user';
 import tweets from '../reducers/tweets';
+import 'antd/dist/antd.css';
 
 
 const store = configureStore({
