@@ -16,15 +16,18 @@ function LastTweets() {
       }, [])
 
 
-    const tweets = tweetsData.map((data, i) => {
-        return <Tweet key={i} {...data} />;
-    })
+    // const tweets = tweetsData.map((data, i) => 
+    //     // const handleDeleteTweet = (token) => {
+    //     // setTweetContent(tweetContent.filter(Tweet => Tweet.token !== token))
+    //   }
+    //     return <Tweet key={i} {...data} />;
+    // // )}
 
 
     return (
         <div>   
 
-            {tweets}
+            {/* {tweets} */}
         </div>
     )
 };
