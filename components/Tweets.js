@@ -1,4 +1,6 @@
-import styles from '../styles/Tweet.module.css'
+import styles from '../styles/Tweet.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { addATweet, getAllTweets } from '../reducers/tweets';
 
 function Tweet(props) {
 
@@ -13,4 +15,4 @@ function Tweet(props) {
     )
 }
 
-export default Tweet
+export default Tweet;

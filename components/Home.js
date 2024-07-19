@@ -6,27 +6,35 @@ import { useEffect, useState } from 'react';
 import LastTweets from './LastTweets';
 import { useRouter } from 'next/router';
 import { logout } from '../reducers/user';
+import { addATweet, getAllTweets } from '../reducers/tweets';
+
 
 function Home() {
 
   const router = useRouter();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
+  const tweets = useSelector((state) => state.tweets.value);
   
   const [tweetContent, setTweetContent] = useState(" ")
+  const [tweetsData, setTweetsData] = useState([]);
   // const token = useSelector((state) => state.user.value.token)
-  const token = "3qfkXa48tbdRyNluB1SzEkb2OAJYMavJ"
-  const url = 'https://hackatweet-backend-ivory.vercel.app/'
+  const token = "3qfkXa48tbdRyNluB1SzEkb2OAJYMavJ";
+  const url = 'https://hackatweet-backend-ivory.vercel.app';
+
+
 
 
   const Tweet = () => {
-    fetch(`${url}${token}`,{
+    fetch(`${url}/tweets/${token}`,{
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({content: tweetContent}),
       }).then(response => response.json())
         .then(data => {
           if(data.result) {
+            dispatch(addATweet(data));
+            console.log(data);
           }
         })
   }
@@ -35,6 +43,11 @@ function Home() {
     dispatch(logout())
     router.push('/')
   }
+
+  let tweetsTab = tweetsData.map((data, i) => {
+      return <Tweet key={i} {...data} />
+  });
+  console.log(tweetsTab);
 
   return (
     <div>
@@ -46,6 +59,8 @@ function Home() {
         <button type="tweet" onClick={() => Tweet()}>Tweet</button>
         
         <LastTweets/>
+
+        {tweetsTab}
 
         <div>
           {user.username}
