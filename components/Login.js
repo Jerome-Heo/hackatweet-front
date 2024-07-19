@@ -13,7 +13,7 @@ const router = useRouter()
 const URL = 'https://hackatweet-backend-ivory.vercel.app'
 const dispatch = useDispatch()
 
-const [isModalVisible, setModalVisible] = useState(true)
+const [isModalVisible, setModalVisible] = useState(false)
 
 const [signInUsername, setSignInUsername] = useState('')
 const [signInPassword, setSignInPassword] = useState('')
@@ -69,6 +69,10 @@ const handleSignIn = () => {
       })
 }
 
+const showModal = () => {
+  setModalVisible(!isModalVisible)
+}
+
   return (
     <div>
       <main className={styles.main}>
@@ -93,12 +97,16 @@ const handleSignIn = () => {
           <h1 className={styles.title}>See what's</h1>
           <h1 className={styles.title}>happening</h1>
           <h2 className={styles.titleBot}>Join Hackatweet today.</h2>
-        
+
+          <button className={styles.SignUp} onClick={() => showModal()}>Sign up</button>
+          <p>Already have an account ?</p>
+          <button className={styles.SignIn} onClick={() => showModal()}>Sign in</button>
+          
           {isModalVisible && <div id="react-modals">
 				<Modal getContainer="#react-modals" className={styles.modal} visible={isModalVisible} closable={false} footer={null}>
-
+            <button onClick={() => showModal()}>X</button>
         <div className={styles.contSignin}>
-          <p>Already have an account ?</p>
+          
 
             <p>Sign In {erreurIn && <p>user not found</p>}</p> {/* sagouin faudra que ça dégage*/}
 

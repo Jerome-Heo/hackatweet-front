@@ -10,11 +10,42 @@
 .title {
   line-height: 1;
   font-size: 6rem;
+  font-weight: bold;
 }
 
 .titleBot{
   line-height: 1;
   font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.SignUp{
+  background-color: #3690ed;
+  width: 215px;
+  height: 50px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.SignUp:hover{
+  background-color: #2f80d1;
+}
+
+.SignIn{
+  background-color: #151d26;
+  color:#0875f3;
+  width: 215px;
+  height: 50px;
+  font-weight: bold;
+  border: white solid 1px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.SignIn:hover{
+  background-color: #222f40;
 }
 
 
