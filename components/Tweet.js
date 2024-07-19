@@ -8,11 +8,11 @@ import { faTrashAlt, faHeart } from '@fortawesome/free-solid-svg-icons'
 function Tweet(props) {
     const url = 'https://hackatweet-backend-ivory.vercel.app';
     const token = "3qfkXa48tbdRyNluB1SzEkb2OAJYMavJ";
-    const handleLikeTweet = () => {
-        props.updateLikedTweets(props.content);
-      };
+    // const handleLikeTweet = () => {
+    //     props.updateLikedTweets(props.tweetContent);
+    //   };
       let heartIconStyle = { 'cursor': 'pointer' };
-      if (props.isLiked) {
+      if (props.likeBy) {
         heartIconStyle = { 'color': '#e74c3c', 'cursor': 'pointer' };
       }
       

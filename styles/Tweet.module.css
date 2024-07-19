@@ -1,7 +1,7 @@
 .Tweet{
     width: 100%;
     border-top: solid rgb(83, 83, 83) 1px;
-    height: 175px;
+    height: 200px;
 }
 
 .author{
@@ -33,3 +33,7 @@
 .icons{
     margin: 5px;
 }
+
+.tweetCont{
+    overflow-y: scroll;    
+} 
