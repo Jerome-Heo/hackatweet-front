@@ -94,7 +94,20 @@ const handleSignIn = () => {
           <h1 className={styles.title}>happening</h1>
           <h2 className={styles.titleBot}>Join Hackatweet today.</h2>
         
-          <div className={styles.contSignup}>
+          {isModalVisible && <div id="react-modals">
+				<Modal getContainer="#react-modals" className={styles.modal} visible={isModalVisible} closable={false} footer={null}>
+
+        <div className={styles.contSignin}>
+          <p>Already have an account ?</p>
+
+            <p>Sign In {erreurIn && <p>user not found</p>}</p> {/* sagouin faudra que ça dégage*/}
+
+            <input type="text" placeholder="username" value={signInUsername} onChange={(e) => setSignInUsername(e.target.value)}/>
+            <input type="password" placeholder="password" value={signInPassword} onChange={(e) => setSignInPassword(e.target.value)}/>
+            <button onClick={() => handleSignIn()}>sign in</button>
+        </div>
+              
+        <div className={styles.contSignup}>
 
             <p>Sign Up {erreurUP && <p>y'a eu une erreur</p>}</p> {/* sagouin faudra que ça dégage*/}
 
@@ -102,25 +115,12 @@ const handleSignIn = () => {
             <input type="text" placeholder="username" value={signUpUsername} onChange={(e) => setSignUpUsername(e.target.value)}/>
             <input type="password" placeholder="password" value={signUpPassword} onChange={(e) => setSignUpPassword(e.target.value)}/>
             <button onClick={() => handleSignUp()}>sign up</button>
-          </div>
+            </div>
+          </Modal>
+        </div>}
 
 
-          <div className={styles.contSignin}>
-          <p>Already have an account ?</p>
-
-            <p>Sign In {erreurIn && <p>user not found</p>}</p> {/* sagouin faudra que ça dégage*/}
-
-            {isModalVisible && <div id="react-modals">
-				<Modal getContainer="#react-modals" className={styles.modal} visible={isModalVisible} closable={false} footer={null}>
-					{modalContent}
-				</Modal>
-			</div>}
-
-            
-            <input type="text" placeholder="username" value={signInUsername} onChange={(e) => setSignInUsername(e.target.value)}/>
-            <input type="password" placeholder="password" value={signInPassword} onChange={(e) => setSignInPassword(e.target.value)}/>
-            <button onClick={() => handleSignIn()}>sign in</button>
-        </div>
+       
 
         </div>
       </main>
