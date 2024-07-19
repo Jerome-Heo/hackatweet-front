@@ -29,11 +29,18 @@ function Tweet(props) {
 
     return(
         <div className={styles.Tweet}>
-           <div className={styles.TweetHead}> <h3 className={styles.author}>{props.authorName}@{props.authorUsername}</h3> <p>{props.date}</p> </div>
-            <p>{props.content}</p>
-            <span><FontAwesomeIcon icon={faTrashAlt} onClick={() => deleteTweet()} style ={trashIconStyle} className="delete"/></span>
-            <span><FontAwesomeIcon icon={faHeart} onClick={() => handleLikeTweet()} style={heartIconStyle} className="like" /></span>
-            
+
+           <div className={styles.TweetHead}>
+              <img className={styles.eggIcon} src="egg-flat.png" width={50} height={50}/>
+              <p>{props.authorUsername}</p><p className={styles.author}>@{props.authorName} - </p> 
+              <p>{props.date}</p> 
+            </div>
+
+            <p className={styles.content}>{props.content}</p>
+              <div className={styles.iconCont}>
+                <span className={styles.icons}><FontAwesomeIcon icon={faHeart} onClick={() => handleLikeTweet()} style={heartIconStyle} className="like" /></span>
+                <span className={styles.icons}><FontAwesomeIcon icon={faTrashAlt} onClick={() => deleteTweet()} style ={trashIconStyle} className="delete"/></span>
+              </div>
         </div>
 
     )

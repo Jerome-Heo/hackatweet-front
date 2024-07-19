@@ -1,27 +1,88 @@
 .main {
+  background-color: #151d26;
+  display: flex;
+  flex-direction: row;
+  color: white
+}
+
+
+
+.leftCont{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
+  justify-content: space-between;
+  width: 25%;
+}
+
+.logo{
+  margin: 5% 10%;
+}
+.Profile{
+  display: flex;
+  margin-left: 10%;
+}
+
+.profileUserName{
+  margin-bottom: 5px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.profileName{
+  margin-left: 10px;
+  color: rgb(99, 99, 99);
+}
+
+.logoutButton{
+  color: white;
+  background-color: #151d26;
+  border-radius: 15px;
+  border: 1px solid white;
+  width: fit-content;
+  padding: 5px 15px;
+  margin: 5% 10%;
+}
+
+.centerCont{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100vh;
+  border: solid rgb(83, 83, 83) 1px;
 }
 
 .title {
+  padding: 3%;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 1.5rem;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.tweetInput{
+  background-color: #151d26;
+  border: none;
+  margin-left: 5%;
+  border-bottom: white solid 1px;
+  color: #fff;
+  font-size: 20px;
+  padding: 5px 10px;
+  width: 40vw;
 }
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.tweetPost{
+  margin-left: 39vw;
+  margin-top: 15px;
+  padding: 5px 20px;
+  background-color: #3690ed;
+  width: fit-content;
+  height: fit-content;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 15px;
 }
 
-.cont{
-  margin-top: 20px;
-  border: dotted grey;
+.rightCont{
+  width: 25%;
+
+
 }

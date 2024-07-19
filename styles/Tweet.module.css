@@ -1,13 +1,35 @@
 .Tweet{
-    width: 60%;
+    width: 100%;
+    border-top: solid rgb(83, 83, 83) 1px;
+    height: 175px;
 }
 
 .author{
+    margin-left: 10px;
     margin-right: 10px;
+    font-weight: 400;
+    color: grey;
+}
+
+.eggIcon{
+    margin: 10px;
 }
 
 .TweetHead{
     align-items: center;
     display: flex;
     flex-direction: row;
+}
+
+.content{
+    font-weight: 400;
+    margin: 20px;
+}
+
+.iconCont{
+    margin-left: 15px;
+}
+
+.icons{
+    margin: 5px;
 }

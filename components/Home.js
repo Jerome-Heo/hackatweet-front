@@ -44,20 +44,35 @@ function Home() {
   return (
     <div>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          TEST
-        </h1>
-        <input type="text" value={tweetContent} onChange={(e) => setTweetContent(e.target.value)} placeholder="What's up?"/>
-        <button type="tweet" onClick={() => Tweet()}>Tweet</button>
-        
-        {<LastTweets/>}
 
-        <div>
-          {user.username}
-        <button className={styles.logoutButton} onClick={() => Logout()}>logout</button>
+        <div className={styles.leftCont}>
+        <img className={styles.logo} src="twitter_logo.png" alt="Hack a Tweet" width={55} height={45}/>
+            <div>
+              <div className={styles.Profile}>
+                <img src="egg-flat.png" width={70} height={70}/>
+                  <div >
+                    <div className={styles.profileUserName}>{user.username} </div>
+                    <div className={styles.profileName}> @{user.name}</div>
+                  </div>
+              </div>
+              <button className={styles.logoutButton} onClick={() => Logout()}>logout</button>
+            </div>
         </div>
 
+          <div className={styles.centerCont}>
+              <div>
+                <h1 className={styles.title}>Home</h1>
+                <input className={styles.tweetInput} type="text" value={tweetContent} onChange={(e) => setTweetContent(e.target.value)} placeholder="What's up?"/>
+                <div><button className={styles.tweetPost} type="tweet" onClick={() => Tweet()}>Tweet</button></div>
+              </div>
+          {<LastTweets/>}
+          </div>
         
+        <div className={styles.rightCont}> 
+          <p>Trends</p>
+          <Link href="/hashtag"> page hashtag </Link>
+        </div>
+
       </main>
     </div>
   );
