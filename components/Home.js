@@ -1,13 +1,17 @@
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 import Tweet from './Tweets';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import LastTweets from './LastTweets';
 import { useRouter } from 'next/router';
+import { logout } from '../reducers/user';
 
 function Home() {
 
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.value);
   
   const [tweetContent, setTweetContent] = useState(" ")
   // const token = useSelector((state) => state.user.value.token)
@@ -27,6 +31,11 @@ function Home() {
         })
   }
 
+  const Logout = () => {
+    dispatch(logout())
+    router.push('/')
+  }
+
   return (
     <div>
       <main className={styles.main}>
@@ -35,8 +44,15 @@ function Home() {
         </h1>
         <input type="text" value={tweetContent} onChange={(e) => setTweetContent(e.target.value)} placeholder="What's up?"/>
         <button type="tweet" onClick={() => Tweet()}>Tweet</button>
-        <p>{`${token}`}</p>
+        
         <LastTweets/>
+
+        <div>
+          {user.username}
+        <button className={styles.logoutButton} onClick={() => Logout()}>logout</button>
+        </div>
+
+        
       </main>
     </div>
   );
