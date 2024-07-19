@@ -12,20 +12,17 @@ function Home() {
   const [tweetContent, setTweetContent] = useState(" ")
   // const token = useSelector((state) => state.user.value.token)
   const token = "3qfkXa48tbdRyNluB1SzEkb2OAJYMavJ"
-  console.log(token)
+  const url = 'https://hackatweet-backend-ivory.vercel.app/'
 
 
   const Tweet = () => {
-    fetch(`http://localhost:3000/tweets/${token}`,{
+    fetch(`${url}${token}`,{
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({content: tweetContent}),
       }).then(response => response.json())
         .then(data => {
           if(data.result) {
-            //il faudra mettre un reducer
-          } else {
-            setErreurIn(true) //sagouin faudra que ça dégage
           }
         })
   }
