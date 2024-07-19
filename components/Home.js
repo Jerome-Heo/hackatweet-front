@@ -16,7 +16,7 @@ function Home() {
   const user = useSelector((state) => state.user.value);
   const tweets = useSelector((state) => state.tweets.value);
   
-  const [tweetContent, setTweetContent] = useState(" ")
+  const [tweetContent, setTweetContent] = useState("")
   const [tweetsData, setTweetsData] = useState([]);
   // const token = useSelector((state) => state.user.value.token)
   const token = "3qfkXa48tbdRyNluB1SzEkb2OAJYMavJ";
@@ -30,8 +30,7 @@ function Home() {
       }).then(response => response.json())
         .then(data => {
           if(data.result) {
-            dispatch(addATweet(data));
-            console.log(data);
+            dispatch(addATweet(data.tweet));
           }
         })
   }
@@ -41,10 +40,6 @@ function Home() {
     router.push('/')
   }
 
-  let tweetsTab = tweetsData.map((data, i) => {
-      return <Tweet key={i} {...data} />
-  });
-  console.log(tweetsTab);
 
   return (
     <div>
