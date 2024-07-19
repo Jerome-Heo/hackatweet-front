@@ -1,16 +1,19 @@
 import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { useDispatch } from 'react-redux'
-import { useState, useEffect } from 'react'
-import { login, logout } from '../reducers/user'
-import { useRouter } from 'next/router'
+import { useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { login, logout } from '../reducers/user';
+import { useRouter } from 'next/router';
+import { Modal } from 'antd';
 
 function Login() {
 
 const router = useRouter()
 const URL = 'https://hackatweet-backend-ivory.vercel.app'
 const dispatch = useDispatch()
+
+const [isModalVisible, setModalVisible] = useState(true)
 
 const [signInUsername, setSignInUsername] = useState('')
 const [signInPassword, setSignInPassword] = useState('')
@@ -69,34 +72,57 @@ const handleSignIn = () => {
   return (
     <div>
       <main className={styles.main}>
-        <h1 className={styles.title}>LOGIN</h1>
+        <div className={styles.LeftPanel}>
+          
         <img
           src="twitter_logo.png"
           alt="Hack a Tweet"
-          width={120}
-          height={120}
+          width={450}
+          height={366}
         />
-
-        <div className={styles.cont}>
-
-          <p>Sign Up {erreurUP && <p>y'a eu une erreur</p>}</p> {/* sagouin faudra que ça dégage*/}
-
-          <input type="text" placeholder="name" value={signUpName} onChange={(e) => setSignUpName(e.target.value)} />
-          <input type="text" placeholder="username" value={signUpUsername} onChange={(e) => setSignUpUsername(e.target.value)}/>
-          <input type="password" placeholder="password" value={signUpPassword} onChange={(e) => setSignUpPassword(e.target.value)}/>
-          <button onClick={() => handleSignUp()}>sign up</button>
         </div>
 
 
-        <div className={styles.cont}>
+        <div className={styles.RightPanel} >
+            <img className={styles.logo}
+              src="twitter_logo.png"
+              alt="Hack a Tweet"
+              width={55}
+              height={45}
+            />
+          <h1 className={styles.title}>See what's</h1>
+          <h1 className={styles.title}>happening</h1>
+          <h2 className={styles.titleBot}>Join Hackatweet today.</h2>
+        
+          <div className={styles.contSignup}>
 
-          <p>Sign In {erreurIn && <p>user not found</p>}</p> {/* sagouin faudra que ça dégage*/}
+            <p>Sign Up {erreurUP && <p>y'a eu une erreur</p>}</p> {/* sagouin faudra que ça dégage*/}
 
-          <input type="text" placeholder="username" value={signInUsername} onChange={(e) => setSignInUsername(e.target.value)}/>
-          <input type="password" placeholder="password" value={signInPassword} onChange={(e) => setSignInPassword(e.target.value)}/>
-          <button onClick={() => handleSignIn()}>sign in</button>
+            <input type="text" placeholder="name" value={signUpName} onChange={(e) => setSignUpName(e.target.value)} />
+            <input type="text" placeholder="username" value={signUpUsername} onChange={(e) => setSignUpUsername(e.target.value)}/>
+            <input type="password" placeholder="password" value={signUpPassword} onChange={(e) => setSignUpPassword(e.target.value)}/>
+            <button onClick={() => handleSignUp()}>sign up</button>
+          </div>
+
+
+          <div className={styles.contSignin}>
+          <p>Already have an account ?</p>
+
+            <p>Sign In {erreurIn && <p>user not found</p>}</p> {/* sagouin faudra que ça dégage*/}
+
+            {isModalVisible && <div id="react-modals">
+				<Modal getContainer="#react-modals" className={styles.modal} visible={isModalVisible} closable={false} footer={null}>
+					{modalContent}
+				</Modal>
+			</div>}
+
+            
+            <input type="text" placeholder="username" value={signInUsername} onChange={(e) => setSignInUsername(e.target.value)}/>
+            <input type="password" placeholder="password" value={signInPassword} onChange={(e) => setSignInPassword(e.target.value)}/>
+            <button onClick={() => handleSignIn()}>sign in</button>
         </div>
 
+        </div>
       </main>
     </div>
   );
