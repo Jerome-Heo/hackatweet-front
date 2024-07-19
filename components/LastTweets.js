@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import Tweet from "./Tweets";
+import Tweet from "./Tweet";
 
 function LastTweets() {
 
