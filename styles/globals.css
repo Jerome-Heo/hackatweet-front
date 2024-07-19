@@ -14,3 +14,17 @@ p{
 * {
   box-sizing: border-box;
 }
+
+
+.ant-modal-content {
+  background-color: #151d26 !important;
+  box-shadow: none !important;
+}
+
+.ant-modal-close-x {
+  color: white !important;
+}
+
+.ant-modal-close:hover .ant-modal-close-x {
+  color: #ddd !important; 
+}

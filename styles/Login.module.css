@@ -49,16 +49,6 @@
 }
 
 
-.contSignup{
-  margin-top: 20px;
-  border: dotted grey;
-}
-
-.contSignin{
-  margin-top: 20px;
-  border: dotted grey;
-}
-
 .LeftPanel{
   display: flex;
   justify-content: center;
@@ -68,7 +58,6 @@
   background-position: center;
   height: 100vh;
   width: 40%;
-  border: solid red;
 }
 
 .RightPanel{
@@ -77,10 +66,50 @@
   color: white;
   height: 100vh;
   width: 60%;
-  border: solid pink;
 }
 
 .logo{
   margin-top: 2%;
   margin-bottom: 50px;
+}
+
+
+.modalCont{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10%;
+}
+
+.modalTitle{
+  font-size: xx-large;
+color: white;
+}
+
+.input{
+  color: white;
+  border: #243242 solid 1px;
+  background-color: #151d26;
+  padding-left: 2%;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 40%;
+}
+
+.inputBtn{
+  font-size: large;
+  font-weight: bold;
+  height: 50px;
+  border-radius: 25px;
+  color: black;
+  background-color: white;
+  width: 40%;
+}
+
+.inputBtn:hover{
+  background-color: #ddd;
+
 }
