@@ -35,6 +35,8 @@ function Home() {
         })
   }
 
+
+
   const Logout = () => {
     dispatch(logout())
     router.push('/')
@@ -47,7 +49,7 @@ function Home() {
         <h1 className={styles.title}>
           TEST
         </h1>
-        <input type="text" value={tweetContent} onChange={(e) => setTweetContent(e.target.value)} placeholder="What's up?"/>
+        <input type="text" value={tweetContent} onChange={(e) => setTweetContent(e.target.value)} placeholder="What's up?" maxlength ="280"/>
         <button type="tweet" onClick={() => Tweet()}>Tweet</button>
         
         {<LastTweets/>}
