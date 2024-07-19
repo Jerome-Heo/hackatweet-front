@@ -8,7 +8,7 @@ function LastTweets() {
     const [tweetsData, setTweetsData] = useState([]); 
 
     useEffect(() => {
-        fetch('http://localhost:3000/tweets')
+        fetch('https://hackatweet-backend-ivory.vercel.app/tweets')
           .then(response => response.json())
           .then(data => {
             setTweetsData(data);
