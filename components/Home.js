@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
-import Tweet from './Tweets';
+import Tweet from './Tweet';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import LastTweets from './LastTweets';
@@ -21,9 +21,6 @@ function Home() {
   // const token = useSelector((state) => state.user.value.token)
   const token = "3qfkXa48tbdRyNluB1SzEkb2OAJYMavJ";
   const url = 'https://hackatweet-backend-ivory.vercel.app';
-
-
-
 
   const Tweet = () => {
     fetch(`${url}/tweets/${token}`,{
@@ -58,9 +55,7 @@ function Home() {
         <input type="text" value={tweetContent} onChange={(e) => setTweetContent(e.target.value)} placeholder="What's up?"/>
         <button type="tweet" onClick={() => Tweet()}>Tweet</button>
         
-        <LastTweets/>
-
-        {tweetsTab}
+        {<LastTweets/>}
 
         <div>
           {user.username}
