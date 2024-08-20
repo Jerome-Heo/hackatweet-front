@@ -19,7 +19,7 @@ function SignIn() {
   const [password, setPassword] = useState('');
 
   const handleSubmit = () => {
-    fetch('http://localhost:3000/users/signin', {
+    fetch('https://hackatweet-front-phi.vercel.app/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password }),
