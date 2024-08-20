@@ -1,39 +1,53 @@
-.Tweet{
-    width: 100%;
-    border-top: solid rgb(83, 83, 83) 1px;
-    height: 200px;
+@font-face {
+  font-family: "Mont";
+  src: url("/fonts/Mont-Heavy.otf");
 }
 
-.author{
-    margin-left: 10px;
-    margin-right: 10px;
-    font-weight: 400;
-    color: grey;
+.container {
+  border: rgba(114, 131, 148, 0.455) solid;
+  border-width: 1px 0px 0px 0px;
+  padding: 20px;
 }
 
-.eggIcon{
-    margin: 10px;
+.userInfo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-.TweetHead{
-    align-items: center;
-    display: flex;
-    flex-direction: row;
+.avatar {
+  border-radius: 50%;
 }
 
-.content{
-    font-weight: 400;
-    margin: 20px;
+.content {
+  margin: 0;
+  margin-left: 12px;
 }
 
-.iconCont{
-    margin-left: 15px;
+.like,
+.delete {
+  cursor: pointer;
 }
 
-.icons{
-    margin: 5px;
+.like {
+  margin-right: 5px;
+  color: white;
 }
 
-.tweetCont{
-    overflow-y: scroll;    
-} 
+.delete {
+  margin-left: 10px;
+  color: white;
+}
+
+.name {
+  font-family: "Mont";
+}
+
+.name,
+.greyText {
+  font-size: 15px;
+}
+
+.greyText {
+  color: rgb(114, 131, 148);
+}

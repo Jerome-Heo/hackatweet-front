@@ -1,115 +1,72 @@
-.main {
+@font-face {
+  font-family: "Mont";
+  src: url("/fonts/Mont-Heavy.otf");
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: row;
+}
+
+.leftSection {
+  display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  width: 40vw;
+  background-image: url('https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png');
+}
 
+.rightSection {
+  height: 100vh;
+  width: 60vw;
+  padding: 30px;
+  background-color: #15202b;
+  font-family: "Mont";
+}
+
+.signUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 200px;
+  margin-bottom: 15px;
+  background-color: #409BF1;
+  border-radius: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.signUp:hover {
+  background-color: #3384cf;
+}
+
+.signIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 200px;
+  border: 1px rgb(114, 131, 148) solid;
+  border-radius: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.signIn:hover {
+  background-color: #24374a;
+}
+
+.signUpText {
+  color: white;
 }
 
 .title {
-  line-height: 1;
-  font-size: 6rem;
-  font-weight: bold;
-}
-
-.titleBot{
-  line-height: 1;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.SignUp{
-  background-color: #3690ed;
-  width: 215px;
-  height: 50px;
-  font-weight: bold;
-  border: none;
-  border-radius: 20px;
-  margin-bottom: 15px;
-}
-
-.SignUp:hover{
-  background-color: #2f80d1;
-}
-
-.SignIn{
-  background-color: #151d26;
-  color:#0875f3;
-  width: 215px;
-  height: 50px;
-  font-weight: bold;
-  border: white solid 1px;
-  border-radius: 20px;
-  margin-bottom: 15px;
-}
-
-.SignIn:hover{
-  background-color: #222f40;
-}
-
-
-.LeftPanel{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('/bckgrnd.png');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 40%;
-}
-
-.RightPanel{
-  padding-left: 2%;
-  background-color: #151d26;
-  color: white;
-  height: 100vh;
-  width: 60%;
-}
-
-.logo{
-  margin-top: 2%;
-  margin-bottom: 50px;
-}
-
-
-.modalCont{
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 10%;
-}
-
-.modalTitle{
-  font-size: xx-large;
-color: white;
-}
-
-.input{
-  color: white;
-  border: #243242 solid 1px;
-  background-color: #151d26;
-  padding-left: 2%;
-  height: 50px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  width: 40%;
-}
-
-.inputBtn{
-  font-size: large;
-  font-weight: bold;
-  height: 50px;
-  border-radius: 25px;
-  color: black;
-  background-color: white;
-  width: 40%;
-}
-
-.inputBtn:hover{
-  background-color: #ddd;
-
+  margin-top: 50px;
 }
